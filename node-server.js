@@ -1,17 +1,12 @@
 const http = require("http");
-const server = http.createServer();
 const port = 3001;
-
-const onRequest = (req, res) => {
+const server = http.createServer((req, res) => {
     res.writeHead(200, {
-    'Content-Type': 'text/html' 
+        'Content-Type': 'text/html'
     });
-    res.write('hello, world!');
+    res.write("<p>hello, world!</p>")
     res.end();
-};
-
-server.on('request', onRequest);
-
+});
 server.listen(port, () => {
-    console.log(`App listening on port ${3000}`);
+    console.log(`App listening on port ${3001}`);
 });
